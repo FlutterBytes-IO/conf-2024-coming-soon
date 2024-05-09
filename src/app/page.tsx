@@ -10,6 +10,7 @@ import GetNotifiedForm from "@/components/GetNotifiedForm";
 import { ButtonChip } from "@/components/Chip";
 import IconContainer from "@/components/IconContainer";
 import MoreInfoBanner from "@/components/MoreInfoBanner";
+import GallerySection from "@/components/GallerySection";
 import TwitterIcon from "@/components/vectors/TwitterIcon";
 import MessageIcon from "@/components/vectors/MessageIcon";
 import LinkedInIcon from "@/components/vectors/LinkedInIcon";
@@ -72,6 +73,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <GallerySection />
           <section id="section4" className="h-[832px] section4-bg flex items-center justify-center">
             <div className="rounded-[100px] px-[82px] pt-[52px] pb-[62px] text-center middlecard w-[709px]">
               <p className="font-semibold text-lg text-[#D0EFFF] mb-6">Now, we’re in 2024  <span className="font-normal">—</span>  Not settling for less</p>

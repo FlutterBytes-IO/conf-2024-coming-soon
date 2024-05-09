@@ -53,6 +53,13 @@
 	background-position: center;
 }
 
+.gallery-sec-bg {
+	background-image: url("../assets/images/GallerySecBg.png");
+	background-color: #2a9df4;
+	background-size: cover;
+	background-position: center;
+}
+
 .footer-gradient {
 	background-image: linear-gradient(
 		to right,
