@@ -1,113 +1,101 @@
+"use client"
+
 import Image from "next/image";
+import { useContext, useRef, useEffect, useState } from "react";
+
+import { DarkmodeContext } from "@/Context/DarkMode";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import GetNotifiedForm from "@/components/GetNotifiedForm";
+import { ButtonChip } from "@/components/Chip";
+import IconContainer from "@/components/IconContainer";
+import MoreInfoBanner from "@/components/MoreInfoBanner";
+import TwitterIcon from "@/components/vectors/TwitterIcon";
+import MessageIcon from "@/components/vectors/MessageIcon";
+import LinkedInIcon from "@/components/vectors/LinkedInIcon";
+import InstagramIcon from "@/components/vectors/InstagramIcon";
+import Conference from "@/assets/images/Conference.png";
+import Hero2 from "@/assets/images/Hero2.png";
+import ImageIcon from "@/assets/icons/Image.svg";
+import Youtube from "@/assets/icons/Youtube.svg";
+
 
 export default function Home() {
+  const { isDarkmode } = useContext(DarkmodeContext);
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const [navHeight, setNavHeight] = useState<number>(0);
+
+  const heroTopMargin = `${(navHeight * 2).toString()}px`;
+
+  useEffect(() => {
+    if (navbarRef.current) {
+      const navbarHeight = navbarRef.current.getBoundingClientRect().height;
+      setNavHeight(navbarHeight)
+    }
+  }, [])
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+      <Navbar ref={navbarRef} />
+        <main className="min-h-screen">
+          <section id="hero" className={`h-screen flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
+            <div className={`flex flex-col items-center md:max-w-[600px]`} style={{marginTop: heroTopMargin}}>
+              <div className="text-center mb-[68px]">
+                <h2 className="text-3xl md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient">FlutterBytes Conference 2024</h2>
+                <p className={`font-medium text-[28px] leading-[33.6px] ${isDarkmode ? "text-[#D0EFFF]" : "text-[#2A9DF4]"}`}>IS COMING SOON...</p>
+              </div>
+              <div className="text-center mb-11">
+                <p className={`leading-6 mb-5 ${isDarkmode ? "text-[#E0E1E2]" : "text-[#576672]"}`}>
+                  To get the latest updates about FlutterBytes Conference 2024<br /> 
+                  directly in your email inbox, subscribe below.
+                </p>
+                <GetNotifiedForm />
+              </div>
+              <div className="flex items-center gap-x-4">
+                <IconContainer icon={<TwitterIcon />} />
+                <IconContainer icon={<LinkedInIcon />} />
+                <MoreInfoBanner />
+                <IconContainer icon={<MessageIcon />} />
+                <IconContainer icon={<InstagramIcon />} />
+              </div>
+            </div>
+          </section>
+          <section className={`py-[127px] flex justify-center items-center ${isDarkmode ? "hero-gradient-dark" : "hero-gradient-light"}`}>
+            <div className="flex flex-col items-center md:max-w-[694.62px]">
+              <Image src={Hero2} alt="" className="object-contain rounded-[20px] mb-16" />
+              <div className="text-center">
+                <h3 className="text-3xl md:text-[40px] md:leading-[45.96px] mb-8 font-semibold header-gradient">No doubts, FlutterBytes Conference 2023 was amazing!</h3>
+                <div className="flex items-center gap-x-5">
+                  <ButtonChip text="View pictures" icon={<Image src={ImageIcon} alt="image" width={20} height={20} />} />
+                  <MoreInfoBanner text="FlutterBytes Conference 2023" otherstyles="!border-[#D0EFFF]" />
+                  <ButtonChip text="Watch event" icon={<Image src={Youtube} alt="image" width={20} height={20} />} />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="section4" className="h-[832px] section4-bg flex items-center justify-center">
+            <div className="rounded-[100px] px-[82px] pt-[52px] pb-[62px] text-center middlecard w-[709px]">
+              <p className="font-semibold text-lg text-[#D0EFFF] mb-6">Now, we’re in 2024  <span className="font-normal">—</span>  Not settling for less</p>
+              <h3 className="text-3xl md:text-[42px] leading-[48.26px] font-semibold text-white">And we’re planning for an even better experience!</h3>
+            </div>
+          </section>
+          <section id="section5" className="h-[832px] section5-bg flex items-center justify-center">
+            <div className="flex flex-col items-center md:w-[532px] gap-y-16">
+              <Image src={Conference} alt="conference-logo" />
+              <div className="text-center">
+                <h3 className="text-3xl md:text-[56px] leading-[67.14px] font-semibold header-gradient mb-[11px]">FlutterBytes Conference 2024</h3>
+                <p className="text-lg font-medium text-[#2A9DF4]">1st & 2nd November</p>
+              </div>
+              <div className="flex items-center gap-x-4">
+                <IconContainer dark icon={<TwitterIcon dark />} />
+                <IconContainer dark icon={<LinkedInIcon dark />} />
+                <MoreInfoBanner dark text="For updates and enquiry" />
+                <IconContainer dark icon={<MessageIcon dark />} />
+                <IconContainer dark icon={<InstagramIcon dark />} />
+              </div>
+            </div>
+          </section>
+        </main>
+      <Footer />
+    </>
   );
 }

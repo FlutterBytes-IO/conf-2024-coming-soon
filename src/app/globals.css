@@ -2,32 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.header-gradient {
+	background: linear-gradient(
+		#1167b1,
+		#187bcd,
+		#2a9df4,
+		#2a9df4,
+		#187bcd,
+		#1167b1
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hero-grad-dark {
+	background-image: linear-gradient(
+		to right,
+		#021429 4%,
+		#052447 50%,
+		#021429 92%
+	);
+	background-size: cover;
+	background-position: center;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hero-gradient-dark {
+	background-image: url("../assets/images/hero2bg.png"),
+		linear-gradient(to right, #021429 4%, #052447 50%, #021429 92%);
+	background-size: cover;
+	background-position: center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hero-gradient-light {
+	background-image: url("../assets/images/hero2bg.png"),
+		linear-gradient(90deg, #ffffff 0%, #d0efff 100%);
+	background-size: cover;
+	background-position: center;
+}
+
+.section4-bg {
+	background-image: url("../assets/images/section4bg.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.section5-bg {
+	background-image: url("../assets/images/section5bg.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.footer-gradient {
+	background-image: linear-gradient(
+		to right,
+		#021429 4%,
+		#052447 50%,
+		#021429 92%
+	);
+}
+
+.middlecard {
+	background-color: #1167b1;
+	background-image: url("../assets/images/middlecard.png");
+	background-size: cover;
+	background-position: center;
 }
