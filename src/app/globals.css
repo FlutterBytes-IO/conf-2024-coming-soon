@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--transition-property: all;
+	--transition-duration: 500ms;
+	--background-size: cover;
+	--background-position: center;
+}
+
+.header-gradient,
+.hero-grad-dark,
+.hero-gradient-dark,
+.hero-gradient-light,
+.section4-bg,
+.section5-bg,
+.gallery-sec-bg,
+.footer-gradient,
+.middlecard {
+	transition-property: var(--transition-property);
+	transition-duration: var(--transition-duration);
+}
+
+.hero-grad-dark,
+.hero-gradient-dark,
+.hero-gradient-light,
+.section4-bg,
+.section5-bg,
+.gallery-sec-bg,
+.middlecard {
+	background-size: var(--background-size);
+	background-position: var(--background-position);
+}
+
 .header-gradient {
 	background: linear-gradient(
 		#1167b1,
@@ -23,41 +54,29 @@
 		#052447 50%,
 		#021429 92%
 	);
-	background-size: cover;
-	background-position: center;
 }
 
 .hero-gradient-dark {
 	background-image: url("../assets/images/hero2bg.png"),
 		linear-gradient(to right, #021429 4%, #052447 50%, #021429 92%);
-	background-size: cover;
-	background-position: center;
 }
 
 .hero-gradient-light {
 	background-image: url("../assets/images/hero2bg.png"),
 		linear-gradient(90deg, #ffffff 0%, #d0efff 100%);
-	background-size: cover;
-	background-position: center;
 }
 
 .section4-bg {
 	background-image: url("../assets/images/section4bg.png");
-	background-size: cover;
-	background-position: center;
 }
 
 .section5-bg {
 	background-image: url("../assets/images/section5bg.png");
-	background-size: cover;
-	background-position: center;
 }
 
 .gallery-sec-bg {
 	background-image: url("../assets/images/GallerySecBg.png");
 	background-color: #2a9df4;
-	background-size: cover;
-	background-position: center;
 }
 
 .footer-gradient {
@@ -72,6 +91,4 @@
 .middlecard {
 	background-color: #1167b1;
 	background-image: url("../assets/images/middlecard.png");
-	background-size: cover;
-	background-position: center;
 }

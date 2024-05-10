@@ -38,14 +38,14 @@ export default function Home() {
     <>
       <Navbar ref={navbarRef} />
         <main className="min-h-screen">
-          <section id="hero" className={`h-screen flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
+          <section id="hero" className={`h-screen transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
             <div className={`flex flex-col items-center md:max-w-[600px]`} style={{marginTop: heroTopMargin}}>
               <div className="text-center mb-[68px]">
                 <h2 className="text-3xl md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient">FlutterBytes Conference 2024</h2>
-                <p className={`font-medium text-[28px] leading-[33.6px] ${isDarkmode ? "text-[#D0EFFF]" : "text-[#2A9DF4]"}`}>IS COMING SOON...</p>
+                <p className={`font-medium transition-all duration-500 text-[28px] leading-[33.6px] ${isDarkmode ? "text-[#D0EFFF]" : "text-[#2A9DF4]"}`}>IS COMING SOON...</p>
               </div>
               <div className="text-center mb-11">
-                <p className={`leading-6 mb-5 ${isDarkmode ? "text-[#E0E1E2]" : "text-[#576672]"}`}>
+                <p className={`leading-6 transition-all duration-500 mb-5 ${isDarkmode ? "text-[#E0E1E2]" : "text-[#576672]"}`}>
                   To get the latest updates about FlutterBytes Conference 2024<br /> 
                   directly in your email inbox, subscribe below.
                 </p>
@@ -60,7 +60,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className={`py-[127px] flex justify-center items-center ${isDarkmode ? "hero-gradient-dark" : "hero-gradient-light"}`}>
+          <section className={`py-[127px] transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-gradient-dark" : "hero-gradient-light"}`}>
             <div className="flex flex-col items-center md:max-w-[694.62px]">
               <Image src={Hero2} alt="" className="object-contain rounded-[20px] mb-16" />
               <div className="text-center">

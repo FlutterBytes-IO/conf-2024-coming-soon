@@ -15,7 +15,7 @@ export default function GetNotifiedForm() {
     }
 
     return (
-        <form className={`w-full flex items-center rounded-[30px] border ${isDarkmode ? "border-[#1167B1]" : "border-[#D0EFFF] bg-[#E5F6FF]"}`} onSubmit={handleSubmit}>
+        <form className={`w-full flex transition-all duration-500 items-center rounded-[30px] border ${isDarkmode ? "border-[#1167B1]" : "border-[#D0EFFF] bg-[#E5F6FF]"}`} onSubmit={handleSubmit}>
             <input
             value={value}
             placeholder="Enter email address"
