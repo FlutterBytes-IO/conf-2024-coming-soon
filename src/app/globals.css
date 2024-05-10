@@ -92,3 +92,18 @@
 	background-color: #1167b1;
 	background-image: url("../assets/images/middlecard.png");
 }
+
+@keyframes movePath {
+	0% {
+		stroke-dashoffset: 1000;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+.animated-text {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: movePath 3s ease forwards;
+}

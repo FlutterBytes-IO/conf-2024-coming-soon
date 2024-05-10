@@ -14,9 +14,9 @@ import DarkModeIcon, { LightModeIcon } from "../vectors/ModeIcon";
 const Navbar = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const { isDarkmode, setIsDarkmode } = useContext(DarkmodeContext);
     return (
-    <div ref={ref} className={`px-[100px] transition-all duration-500 py-3 flex items-center justify-between border-b fixed w-full ${isDarkmode ? "border-[#1167B1] hero-grad-dark" : "border-[#D0EFFF] bg-white"}`}>
+    <div ref={ref} className={`px-5 md:px-[100px] py-3 transition-all z-20 duration-500 flex items-center justify-between border-b fixed w-full ${isDarkmode ? "border-[#1167B1] hero-grad-dark" : "border-[#D0EFFF] bg-white"}`}>
         <div>
-            <Image src={isDarkmode ? NavLogoDark : NavLogoLight} alt="logo" className="transition-all duration-500"  />
+            <Image src={isDarkmode ? NavLogoDark : NavLogoLight} alt="logo" className="transition-all duration-500 h-6 md:h-auto w-[122.53px] md:w-auto"  />
         </div>
         <div className="flex items-center gap-x-3">
             <Button>Get Notified</Button>
