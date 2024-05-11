@@ -27,6 +27,7 @@ export default function Home() {
   const { isDarkmode } = useContext(DarkmodeContext);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [navHeight, setNavHeight] = useState<number>(0);
+  const [deviceWidth, setDeviceWidth] = useState<number>(null!);
 
   const heroTopMargin = `${(navHeight * 2).toString()}px`;
 
@@ -35,6 +36,8 @@ export default function Home() {
       const navbarHeight = navbarRef.current.getBoundingClientRect().height;
       setNavHeight(navbarHeight)
     }
+
+    setDeviceWidth(window.innerWidth);
   }, [])
   return (
     <>
@@ -65,7 +68,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${isDarkmode ? "hero-gradient-dark" : "hero-gradient-light"}`}>
+          <section className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${isDarkmode ? "hero-gradient-dark" : deviceWidth < 768 ? "hero-gradient-light-mobile" : "hero-gradient-light"}`}>
             <div className="flex flex-col items-center md:max-w-[694.62px]">
               <Image src={Hero2} alt="" className="object-contain md:rounded-[20px] mb-10 mt-9 md:mt-0 md:mb-16" />
               <div className="text-center">
@@ -82,27 +85,27 @@ export default function Home() {
             </div>
           </section>
           <GallerySection />
-          <section id="section4" className="h-[257.54px] md:h-[832px] section4-bg flex items-center justify-center">
+          <section id="section4" className="h-[257.54px] px-5 md:px-0 md:h-[832px] section4-bg flex items-center justify-center">
             <div className="rounded-[30.77px] md:rounded-[100px] px-[25.23px] md:px-[82px] pt-[16px] md:pt-[52px] pb-[19.08px] md:pb-[62px] text-center middlecard w-[253.46px] md:w-[709px]">
               <p className="font-semibold text-[10px] md:text-lg text-[#D0EFFF] mb-2 md:mb-6">Now, we’re in 2024  <span className="font-normal">—</span>  Not settling for less</p>
               <h3 className="text-sm leading-[16.09px] md:text-[42px] md:leading-[48.26px] font-semibold text-white">And we’re planning for an even better experience!</h3>
             </div>
           </section>
-          <section id="section5" className="py-8 md:py-0 md:h-[832px] section5-bg flex items-center justify-center">
+          <section id="section5" className="py-8 md:py-0 px-5 md:px-0 md:h-[832px] section5-bg flex items-center justify-center">
             <div className="flex flex-col items-center w-[244px] md:w-[532px] gap-y-7 md:gap-y-16">
               <Image src={Conference} alt="conference-logo" className="w-[69.24px] h-[29.19px] md:w-auto md:h-auto" />
               <div className="text-center">
                 <h3 className="text-[28px] leading-[29.37px] md:text-[56px] md:leading-[67.14px] font-semibold header-gradient mb-[11px]">FlutterBytes Conference 2024</h3>
                 <p className="text-[10px] md:text-lg font-medium text-[#2A9DF4]">1st & 2nd November</p>
               </div>
-              <div className="flex flex-col gap-y-4 text-center">
-              <MoreInfoBanner dark text="For updates and enquiry" withoutArrows otherstyles="md:hidden" />
-              <div className="flex items-center gap-x-4">
-                <IconContainer otherstyles="py-4 px-[9.6px]" dark icon={<TwitterIcon dark />} />
-                <IconContainer otherstyles="py-4 px-[9.6px]" dark icon={<LinkedInIcon dark />} />
-                <MoreInfoBanner dark text="For updates and enquiry" otherstyles="hidden md:flex" />
-                <IconContainer otherstyles="py-4 px-[9.6px]" dark icon={<MessageIcon dark />} />
-                <IconContainer otherstyles="py-4 px-[9.6px]" dark icon={<InstagramIcon dark />} />
+              <div className="flex flex-col gap-y-4">
+              <MoreInfoBanner dark withoutArrows otherstyles="md:hidden self-center" />
+              <div className="flex items-center justify-between md:gap-x-4">
+                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<TwitterIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<LinkedInIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <MoreInfoBanner dark otherstyles="hidden md:flex" />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<MessageIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<InstagramIcon dark small={deviceWidth < 768 ? true : false} />} />
               </div>
               </div>
             </div>

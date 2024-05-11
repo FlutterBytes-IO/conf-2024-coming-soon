@@ -66,6 +66,11 @@
 		linear-gradient(90deg, #ffffff 0%, #d0efff 100%);
 }
 
+.hero-gradient-light-mobile {
+	background-image: url("../assets/images/hero2bg.png"),
+		linear-gradient(to bottom, #ffffff 0%, #d0efff 100%);
+}
+
 .section4-bg {
 	background-image: url("../assets/images/section4bg.png");
 }

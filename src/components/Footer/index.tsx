@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { DarkmodeContext } from "@/Context/DarkMode";
 import GetNotifiedForm from "../GetNotifiedForm";
@@ -15,6 +15,11 @@ import InstagramIcon from "../vectors/InstagramIcon";
 
 export default function Footer() {
     const { isDarkmode } = useContext(DarkmodeContext);
+    const [deviceWidth, setDeviceWidth] = useState<number>(null!);
+
+    useEffect(() => {
+        setDeviceWidth(window.innerWidth)
+    }, [])
     return (
     <div className={`pt-[99px] transition-all duration-500 pb-[35px] md:pb-[80px] px-5 md:px-[101px] ${isDarkmode ? "footer-gradient" : ""}`}>
         <div 
@@ -22,10 +27,10 @@ export default function Footer() {
             <div className="flex flex-col gap-y-5 md:flex-1 items-center md:items-start">
                 <Image src={isDarkmode ? FooterLogoDark : FooterLogoLight} alt="logo" className="transition-all duration-500 w-[204.21px] md:w-auto h-10 md:h-auto" />
                 <div className="flex items-center gap-x-3">
-                    <IconContainer otherstyles="py-4 px-[9.6px]" icon={<TwitterIcon />} />
-                    <IconContainer otherstyles="py-4 px-[9.6px]" icon={<LinkedInIcon />} />
-                    <IconContainer otherstyles="py-4 px-[9.6px]" icon={<MessageIcon />} />
-                    <IconContainer otherstyles="py-4 px-[9.6px]" icon={<InstagramIcon />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<TwitterIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<LinkedInIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<MessageIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<InstagramIcon small={deviceWidth < 768 ? true : false} />} />
                 </div>
             </div>
             <div className="flex flex-col gap-y-5 md:flex-1">
