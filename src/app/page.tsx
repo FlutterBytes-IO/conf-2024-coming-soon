@@ -60,7 +60,7 @@ export default function Home() {
               <MoreInfoBanner otherstyles="md:hidden self-center" withoutArrows />
               <div className="flex items-center gap-x-4">
                 <IconContainer icon={<TwitterIcon />} href="https://x.com/flutterbyteconf" />
-                <IconContainer icon={<LinkedInIcon />} />
+                <IconContainer icon={<LinkedInIcon />} href="https://www.linkedin.com/company/flutterbytes/" />
                 <MoreInfoBanner otherstyles="hidden md:flex" />
                 <IconContainer icon={<MessageIcon />} href="mailto:contact.flutterbytes@gmail.com" />
                 <IconContainer icon={<InstagramIcon />} href="https://www.instagram.com/flutterbytes_c" />
@@ -106,7 +106,7 @@ export default function Home() {
               <MoreInfoBanner dark withoutArrows otherstyles="md:hidden self-center" />
               <div className="flex items-center justify-between md:gap-x-4">
                 <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://x.com/flutterbyteconf" dark icon={<TwitterIcon dark small={deviceWidth < 768 ? true : false} />} />
-                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<LinkedInIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.linkedin.com/company/flutterbytes/" dark icon={<LinkedInIcon dark small={deviceWidth < 768 ? true : false} />} />
                 <MoreInfoBanner dark otherstyles="hidden md:flex" />
                 <IconContainer otherstyles="!py-4 px-[9.6px]" href="mailto:contact.flutterbytes@gmail.com" dark icon={<MessageIcon dark small={deviceWidth < 768 ? true : false} />} />
                 <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.instagram.com/flutterbytes_c" dark icon={<InstagramIcon dark small={deviceWidth < 768 ? true : false} />} />
