@@ -21,7 +21,7 @@ export default function Footer() {
         setDeviceWidth(window.innerWidth)
     }, [])
     return (
-    <div className={`pt-[99px] transition-all duration-500 pb-[35px] md:pb-[80px] px-5 md:px-[101px] ${isDarkmode ? "footer-gradient" : ""}`}>
+    <div className={`pt-[99px]  transition-all duration-500 pb-[35px] md:pb-[80px] px-5 md:px-[101px] ${isDarkmode ? "footer-gradient" : ""}`}>
         <div 
         className="border border-[#1167B1] rounded-xl rounded-b-none border-b-0 pt-7 p-5 flex flex-col gap-y-[70px] md:gap-y-0 md:flex-row md:items-center justify-between">
             <div className="flex flex-col gap-y-5 md:flex-1 items-center md:items-start">
@@ -33,7 +33,7 @@ export default function Footer() {
                     <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<InstagramIcon small={deviceWidth < 768 ? true : false} />} />
                 </div>
             </div>
-            <div className="flex flex-col gap-y-5 md:flex-1">
+            <div className="flex flex-col gap-y-5 md:flex-1 max-w-full">
                 <p className={`text-xs text-center md:text-start md:text-sm transition-all duration-500 ${isDarkmode ? "text-[#E0E1E2]" : "text-[#576672]"}`}>To get the latest updates about FlutterBytes Conference 2024 directly in your email inbox, subscribe below.</p>
                 <GetNotifiedForm />
             </div>
