@@ -5,8 +5,8 @@ import { useContext, useEffect, useState } from "react";
 
 import { DarkmodeContext } from "@/Context/DarkMode";
 import GetNotifiedForm from "../GetNotifiedForm";
-import FooterLogoDark from "@/assets/images/FooterLogoDark.png";
-import FooterLogoLight from "@/assets/images/FooterLogoLight.png";
+import FooterLogoDark from "@/assets/images/FooterLogoDark.svg";
+import FooterLogoLight from "@/assets/images/FooterLogoLight.svg";
 import IconContainer from "../IconContainer";
 import TwitterIcon from "../vectors/TwitterIcon";
 import LinkedInIcon from "../vectors/LinkedInIcon";

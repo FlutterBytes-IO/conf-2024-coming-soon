@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <Navbar ref={navbarRef} />
         <main className="min-h-screen w-full">
-          <section id="hero" className={`h-screen px-5 md:px-0 relative transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
+          <section id="hero" className={`h-screen md:h-[90vh] px-5 md:px-0 relative transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
             <div className={`flex flex-col items-center md:max-w-[600px]`} style={{marginTop: heroTopMargin}}>
               <div className="text-center md:mb-[68px] mb-[140px]">
                 <h2 className="text-5xl leading-[3rem] md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient mt-[111.21px] md:mt-auto">FlutterBytes Conference 2024</h2>
@@ -59,11 +59,11 @@ export default function Home() {
               <div className="flex flex-col gap-y-4">
               <MoreInfoBanner otherstyles="md:hidden self-center" withoutArrows />
               <div className="flex items-center gap-x-4">
-                <IconContainer icon={<TwitterIcon />} />
+                <IconContainer icon={<TwitterIcon />} href="https://x.com/flutterbyteconf" />
                 <IconContainer icon={<LinkedInIcon />} />
                 <MoreInfoBanner otherstyles="hidden md:flex" />
-                <IconContainer icon={<MessageIcon />} />
-                <IconContainer icon={<InstagramIcon />} />
+                <IconContainer icon={<MessageIcon />} href="mailto:contact.flutterbytes@gmail.com" />
+                <IconContainer icon={<InstagramIcon />} href="https://www.instagram.com/flutterbytes_c" />
               </div>
               </div>
             </div>
@@ -76,9 +76,13 @@ export default function Home() {
                 <div className="flex flex-col gap-y-4 justify-center">
                 <MoreInfoBanner withoutArrows text="FlutterBytes Conference 2023" otherstyles="!border-[#D0EFFF] md:hidden self-center" />
                 <div className="flex items-center justify-center md:gap-x-5 gap-x-[13px]">
-                  <ButtonChip text="View pictures" icon={<Image src={ImageIcon} alt="image" className="w-[12.58px] h-[12.58px] md:w-5 md:h-5" />} />
+                  <ButtonChip handleClick={() => {
+                    window.open("https://drive.google.com/drive/folders/1ZJtcPiSPNKjkc1V7fxbgl7Jmjy3vOYCc?usp=share_link", "_blank")
+                  }} text="View pictures" icon={<Image src={ImageIcon} alt="image" className="w-[12.58px] h-[12.58px] md:w-5 md:h-5" />} />
                   <MoreInfoBanner text="FlutterBytes Conference 2023" otherstyles="!border-[#D0EFFF] hidden md:flex" />
-                  <ButtonChip text="Watch event" icon={<Image src={Youtube} alt="image" className="w-[17.9px] h-[12.58px] md:w-5 md:h-5" />} />
+                  <ButtonChip handleClick={() => {
+                    window.open("https://www.youtube.com/live/Yc3wAKyx2JI?si=fyREEExAdzhJLTTT", "_blank")
+                  }} text="Watch event" icon={<Image src={Youtube} alt="image" className="w-[17.9px] h-[12.58px] md:w-5 md:h-5" />} />
                 </div>
                 </div>
               </div>
@@ -101,11 +105,11 @@ export default function Home() {
               <div className="flex flex-col gap-y-4">
               <MoreInfoBanner dark withoutArrows otherstyles="md:hidden self-center" />
               <div className="flex items-center justify-between md:gap-x-4">
-                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<TwitterIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://x.com/flutterbyteconf" dark icon={<TwitterIcon dark small={deviceWidth < 768 ? true : false} />} />
                 <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<LinkedInIcon dark small={deviceWidth < 768 ? true : false} />} />
                 <MoreInfoBanner dark otherstyles="hidden md:flex" />
-                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<MessageIcon dark small={deviceWidth < 768 ? true : false} />} />
-                <IconContainer otherstyles="!py-4 px-[9.6px]" dark icon={<InstagramIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" href="mailto:contact.flutterbytes@gmail.com" dark icon={<MessageIcon dark small={deviceWidth < 768 ? true : false} />} />
+                <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.instagram.com/flutterbytes_c" dark icon={<InstagramIcon dark small={deviceWidth < 768 ? true : false} />} />
               </div>
               </div>
             </div>
