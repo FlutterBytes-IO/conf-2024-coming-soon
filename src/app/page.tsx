@@ -29,7 +29,7 @@ export default function Home() {
   const [navHeight, setNavHeight] = useState<number>(0);
   const [deviceWidth, setDeviceWidth] = useState<number>(null!);
 
-  const heroTopMargin = `${(navHeight * 2).toString()}px`;
+  const heroTopMargin = deviceWidth < 768 ? `${(navHeight * 6).toString()}px` : `${(navHeight * 2).toString()}px`;
 
   useEffect(() => {
     if (navbarRef.current) {
@@ -46,7 +46,7 @@ export default function Home() {
           <section id="hero" className={`h-screen md:h-[90vh] px-5 md:px-0 relative transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
             <div className={`flex flex-col items-center md:max-w-[600px]`} style={{marginTop: heroTopMargin}}>
               <div className="text-center md:mb-[68px] mb-[140px]">
-                <h2 className="text-5xl leading-[3rem] md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient mt-[111.21px] md:mt-auto">FlutterBytes Conference 2024</h2>
+                <h2 className="text-5xl leading-[3rem] md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient md:mt-auto">FlutterBytes Conference 2024</h2>
                 <p className={`font-medium transition-all duration-500 text-[28px] leading-[33.6px] ${isDarkmode ? "text-[#D0EFFF]" : "text-[#2A9DF4]"}`}>IS COMING SOON...</p>
               </div>
               <div className="text-center mb-11">
