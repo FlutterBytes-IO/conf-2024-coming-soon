@@ -50,7 +50,7 @@ export default function GetNotifiedForm({ closeModal }: { closeModal?: () => voi
             onChange={(e) => setValue(e.target.value)}
             className={`md:py-4 md:text-start py-[13.5px] outline-[#1167B1] md:w-full md:pl-5 flex-1 pr-0 md:outline-none text-[#2A9DF4] placeholder:text-[#2A9DF4] placeholder:italic text-xs md:text-sm bg-transparent ${isDarkmode ? "border border-[#1167B1] md:border-none w-full !pl-4 !rounded-[30px] md:rounded-none" : "!bg-[#E5F6FF] text-center w-full !pl-0 md:!pl-5 !rounded-[30px]"}`}
             />
-            <Button type="submit" otherstyles={`py-4 px-5 flex items-center gap-x-1 !bg-[#2A9DF4] !text-white`}>{isSubmitted ? <>Email Added <TickIcon /></> : "Get Notified"}</Button>
+            <Button type="submit" otherstyles={`py-4 px-5 flex items-center justify-center text-center gap-x-1 w-full md:w-auto`}>{isSubmitted ? <>Email Added <TickIcon /></> : "Get Notified"}</Button>
         </form>
     )
 }

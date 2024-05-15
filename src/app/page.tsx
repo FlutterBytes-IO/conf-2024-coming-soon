@@ -40,7 +40,6 @@ export default function Home() {
     setDeviceWidth(window.screen.width);
   }, [])
 
-  console.log(deviceWidth)
   return (
     <>
       <Navbar ref={navbarRef} handleClick={() => setOpenFormModal(true)} />
