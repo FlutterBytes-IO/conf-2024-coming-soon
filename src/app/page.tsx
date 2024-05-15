@@ -19,8 +19,9 @@ import Conference from "@/assets/images/Conference.png";
 import Hero2 from "@/assets/images/Hero2.png";
 import ImageIcon from "@/assets/icons/Image.svg";
 import Youtube from "@/assets/icons/Youtube.svg";
-import ComingSoon from "@/components/vectors/ComingSoon";
-import Anticipate from "@/components/vectors/Anticipate";
+import ComingSoon, { ComingSoonMobile } from "@/components/vectors/ComingSoon";
+import Anticipate, { AnticipateMobile } from "@/components/vectors/Anticipate";
+import FormModal from "@/components/Modals/FormModal";
 
 
 export default function Home() {
@@ -28,8 +29,7 @@ export default function Home() {
   const navbarRef = useRef<HTMLDivElement>(null);
   const [navHeight, setNavHeight] = useState<number>(0);
   const [deviceWidth, setDeviceWidth] = useState<number>(null!);
-
-  console.log(deviceWidth)
+  const [openFormModal, setOpenFormModal] = useState<boolean>(false)
 
   useEffect(() => {
     if (navbarRef.current) {
@@ -39,10 +39,12 @@ export default function Home() {
 
     setDeviceWidth(window.screen.width);
   }, [])
+
+  console.log(deviceWidth)
   return (
     <>
-      <Navbar ref={navbarRef} />
-        <main className="min-h-screen w-full">
+      <Navbar ref={navbarRef} handleClick={() => setOpenFormModal(true)} />
+        <main className="min-h-screen w-full overflow-x-hidden">
           <section id="hero" className={`px-5 md:px-0 relative transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>
             <div className={`flex flex-col items-center md:max-w-[600px] mt-[112px]`}>
               <div className="text-center md:mb-[68px] mb-[140px]">
@@ -67,6 +69,8 @@ export default function Home() {
               </div>
               </div>
             </div>
+           {deviceWidth < 768 ? <ComingSoonMobile /> : <ComingSoon />}
+           {deviceWidth < 768 ? <AnticipateMobile /> : <Anticipate />}
           </section>
           <section className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${isDarkmode ? "hero-gradient-dark" : deviceWidth < 768 ? "hero-gradient-light-mobile" : "hero-gradient-light"}`}>
             <div className="flex flex-col items-center md:max-w-[694.62px]">
@@ -116,6 +120,7 @@ export default function Home() {
           </section>
         </main>
       <Footer />
+      <FormModal openModal={openFormModal} closeModal={() => setOpenFormModal(false)} />
     </>
   );
 }

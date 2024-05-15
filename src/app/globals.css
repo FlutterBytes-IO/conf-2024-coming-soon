@@ -112,3 +112,13 @@
 	stroke-dashoffset: 1000;
 	animation: movePath 3s ease forwards;
 }
+
+.btn-grad:hover {
+	background-image: linear-gradient(
+		to right,
+		#1167b1 4%,
+		#2a9df4 50%,
+		#2a9df4 75%,
+		#1167b1 100%
+	);
+}
