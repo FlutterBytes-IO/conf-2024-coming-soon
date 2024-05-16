@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useContext, useRef, useEffect, useState } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { DarkmodeContext } from "@/Context/DarkMode";
 import Footer from "@/components/Footer";
@@ -42,6 +44,7 @@ export default function Home() {
 
   return (
     <>
+      <ToastContainer />
       <Navbar ref={navbarRef} handleClick={() => setOpenFormModal(true)} />
         <main className="min-h-screen w-full overflow-x-hidden">
           <section id="hero" className={`px-5 md:px-0 relative transition-all duration-500 flex justify-center items-center ${isDarkmode ? "hero-grad-dark": ""}`}>

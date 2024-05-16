@@ -1,6 +1,7 @@
 "use client"
 
 import { useContext, useState, useEffect } from "react";
+import { toast } from "react-toastify"
 
 import { DarkmodeContext } from "@/Context/DarkMode";
 import Button from "./Button";
@@ -20,7 +21,7 @@ export default function GetNotifiedForm({ closeModal }: { closeModal?: () => voi
         e.preventDefault();
         setIsSubmitted(false)
         try {
-            const res = await fetch("https://geekapi.pythonanywhere.com/api/email/", {
+            const res = await fetch("https://geekapi.pythonanywhere.com/api/email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -31,14 +32,14 @@ export default function GetNotifiedForm({ closeModal }: { closeModal?: () => voi
                 throw new Error(`Error: ${res.status}`);
             }
             const data = await res.json();
-            console.log(data);
+            toast.success(data?.message)
             setIsSubmitted(true)
             setValue("")
-            if (closeModal) closeModal();
         } catch (err) {
-            console.log(err);
+            toast.error("Error!")
         } finally {
-            setIsSubmitted(false)
+            setIsSubmitted(false);
+            if (closeModal) closeModal();
         }
     };
 

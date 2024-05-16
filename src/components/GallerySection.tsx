@@ -33,8 +33,6 @@ export default function GallerySection() {
         setOpenModal(true);
     }
 
-    console.log(currentImgPrev)
-
     function hideImage() {
         setOpenModal(false);
         setCurrentImgPrev({ src: "", height: 0, width: 0 })
