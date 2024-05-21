@@ -64,7 +64,7 @@ export default function GallerySection() {
                 height={175.53}
                 className="absolute rounded-[5.84px] lg:rounded-[10px] -top-[7.42px] lg:-top-2.5 -right-[16.42px] lg:-right-[9px] w-[142.42px] lg:w-auto h-[100px] lg:h-auto"
             />
-            <div className="text-center w-[326px] lg:w-[545px]">
+            <div className="text-center w-[326px] md:w-[545px]">
                 <h3 className="font-semibold text-[28px] leading-[32.17px] lg:text-[42px] lg:leading-[48.26px] text-white">
                     Lots of technical stuff learnt, connections made, evidences shown.
                 </h3>
