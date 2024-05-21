@@ -54,7 +54,7 @@ export default function GetNotifiedForm({ closeModal }: { closeModal?: () => voi
                 value={value}
                 placeholder="Enter email address"
                 onChange={(e) => setValue(e.target.value)}
-                className={`py-[13.5px] pl-4 outline-none bg-transparent flex-1 pr-0 md:outline-none text-[#2A9DF4] placeholder:text-[#2A9DF4] placeholder:italic text-xs md:text-sm`}
+                className={`py-[13.5px] pl-4 outline-none bg-transparent w-full flex-1 pr-0 md:outline-none text-[#2A9DF4] placeholder:text-[#2A9DF4] placeholder:italic text-xs md:text-sm`}
             />
             <Button disabled={isLoading} type="submit" otherstyles={`py-4 min-[321px]:px-5 flex items-center justify-center text-center gap-x-1`}>{isSubmitted ? <>Email Added <TickIcon /></> : "Get Notified"}</Button>
         </form>
