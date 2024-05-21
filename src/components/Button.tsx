@@ -3,7 +3,7 @@ interface ButtonProps {
     otherstyles?: string;
     onClick?: () => void;
     type?: "button" | "submit" | "reset";
-    disabled: boolean
+    disabled?: boolean
 }
 
 export default function Button({ children, otherstyles, onClick, type, disabled }: ButtonProps) {

@@ -55,7 +55,7 @@ export default function Home() {
               </div>
               <div className="text-center mb-11">
                 <p className={`leading-6 text-sm md:text-base max-w-[340px] md:max-w-[503px] transition-all duration-500 mb-5 ${isDarkmode ? "text-[#E0E1E2]" : "text-[#576672]"}`}>
-                  To get the latest updates about FlutterBytes Conference 2024<br className="hidden md:block" /> 
+                  To get the latest updates about FlutterBytes Conference 2024<br className="hidden md:block" />{" "}
                   directly in your email inbox,<br className="md:hidden" /> subscribe below.
                 </p>
                 <GetNotifiedForm />
@@ -74,18 +74,17 @@ export default function Home() {
            {deviceWidth < 768 ? <ComingSoonMobile /> : <ComingSoon />}
            {deviceWidth < 768 ? <AnticipateMobile /> : <Anticipate />}
           </section>
-          <section className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${isDarkmode ? "hero-gradient-dark" : deviceWidth < 768 ? "hero-gradient-light-mobile" : "hero-gradient-light"}`}>
+          <section className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${isDarkmode ? "hero-gradient-dark" : "hero-gradient-light-mobile"}`}>
             <div className="flex flex-col items-center md:max-w-[694.62px]">
               <Image src={Hero2} alt="" className="object-contain md:rounded-[20px] mb-10 mt-9 md:mt-0 md:mb-16" />
               <div className="text-center">
                 <h3 className="text-[28px] leading-[32.17px] md:text-[40px] md:leading-[45.96px] mb-8 font-semibold header-gradient">No doubts, FlutterBytes Conference 2023 was amazing!</h3>
                 <div className="flex flex-col gap-y-4 justify-center">
-                <MoreInfoBanner withoutArrows text="FlutterBytes Conference 2023" otherstyles="!border-[#D0EFFF] md:hidden self-center" />
+                <p className={`font-medium md:font-semibold text-sm md:text-base ${isDarkmode ? "text-[#D0EFFF]" : "text-[#187BCD]"}`}>Catch up with FlutterBytes Conference 2023</p>
                 <div className="flex items-center justify-center md:gap-x-5 gap-x-[13px]">
                   <ButtonChip handleClick={() => {
                     window.open("https://drive.google.com/drive/folders/1ZJtcPiSPNKjkc1V7fxbgl7Jmjy3vOYCc?usp=share_link", "_blank")
                   }} text="View pictures" icon={<Image src={ImageIcon} alt="image" className="w-[12.58px] h-[12.58px] md:w-5 md:h-5" />} />
-                  <MoreInfoBanner text="FlutterBytes Conference 2023" otherstyles="!border-[#D0EFFF] hidden md:flex" />
                   <ButtonChip handleClick={() => {
                     window.open("https://www.youtube.com/live/Yc3wAKyx2JI?si=fyREEExAdzhJLTTT", "_blank")
                   }} text="Watch event" icon={<Image src={Youtube} alt="image" className="w-[17.9px] h-[12.58px] md:w-5 md:h-5" />} />
@@ -107,16 +106,6 @@ export default function Home() {
               <div className="text-center">
                 <h3 className="text-[28px] leading-[29.37px] md:text-[56px] md:leading-[67.14px] font-semibold header-gradient mb-[11px]">FlutterBytes Conference 2024</h3>
                 <p className="text-[10px] md:text-lg font-medium text-[#2A9DF4]">1st & 2nd November</p>
-              </div>
-              <div className="flex flex-col gap-y-4">
-              <MoreInfoBanner dark withoutArrows otherstyles="md:hidden self-center" />
-              <div className="flex items-center justify-between md:gap-x-4">
-                <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://x.com/flutterbyteconf" dark icon={<TwitterIcon dark small={deviceWidth < 768 ? true : false} />} />
-                <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.linkedin.com/company/flutterbytes/" dark icon={<LinkedInIcon dark small={deviceWidth < 768 ? true : false} />} />
-                <MoreInfoBanner dark otherstyles="hidden md:flex" />
-                <IconContainer otherstyles="!py-4 px-[9.6px]" href="mailto:contact.flutterbytes@gmail.com" dark icon={<MessageIcon dark small={deviceWidth < 768 ? true : false} />} />
-                <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.instagram.com/flutterbytes_c" dark icon={<InstagramIcon dark small={deviceWidth < 768 ? true : false} />} />
-              </div>
               </div>
             </div>
           </section>
