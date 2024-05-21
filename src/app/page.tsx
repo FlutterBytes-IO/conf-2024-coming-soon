@@ -52,6 +52,7 @@ export default function Home() {
               <div className="text-center md:mb-[68px] mb-[140px]">
                 <h2 className="text-5xl leading-[3rem] md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient md:mt-auto">FlutterBytes Conference 2024</h2>
                 <p className={`font-medium transition-all duration-500 text-[28px] leading-[33.6px] ${isDarkmode ? "text-[#D0EFFF]" : "text-[#2A9DF4]"}`}>IS COMING SOON...</p>
+                <p className={`mt-3 font-semibold text-xs md:text-base ${isDarkmode ? "text-[#2A9DF4]" : "text-[#1167B1]"}`}>1st & 2nd November, 2024.</p>
               </div>
               <div className="text-center mb-11">
                 <p className={`leading-6 text-sm md:text-base max-w-[340px] md:max-w-[503px] transition-all duration-500 mb-5 ${isDarkmode ? "text-[#E0E1E2]" : "text-[#576672]"}`}>

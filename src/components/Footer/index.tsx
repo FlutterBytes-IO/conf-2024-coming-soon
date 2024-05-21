@@ -27,10 +27,10 @@ export default function Footer() {
             <div className="flex flex-col gap-y-5 md:flex-1 items-center md:items-start">
                 <Image src={isDarkmode ? FooterLogoDark : FooterLogoLight} alt="logo" className="transition-all duration-500 w-[204.21px] md:w-auto h-10 md:h-auto" />
                 <div className="flex items-center gap-x-3">
-                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<TwitterIcon small={deviceWidth < 768 ? true : false} />} />
-                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<LinkedInIcon small={deviceWidth < 768 ? true : false} />} />
-                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<MessageIcon small={deviceWidth < 768 ? true : false} />} />
-                    <IconContainer otherstyles="!py-4 px-[9.6px]" icon={<InstagramIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://x.com/flutterbyteconf" icon={<TwitterIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.linkedin.com/company/flutterbytes/" icon={<LinkedInIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" href="mailto:contact.flutterbytes@gmail.com" icon={<MessageIcon small={deviceWidth < 768 ? true : false} />} />
+                    <IconContainer otherstyles="!py-4 px-[9.6px]" href="https://www.instagram.com/flutterbytes_c" icon={<InstagramIcon small={deviceWidth < 768 ? true : false} />} />
                 </div>
             </div>
             <div className="flex flex-col gap-y-5 md:flex-1 max-w-full">
