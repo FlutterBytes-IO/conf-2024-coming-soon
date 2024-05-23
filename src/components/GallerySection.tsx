@@ -66,7 +66,7 @@ export default function GallerySection() {
             />
             <div className="text-center w-[326px] md:w-[545px]">
                 <h3 className="font-semibold text-[28px] leading-[32.17px] lg:text-[42px] lg:leading-[48.26px] text-white">
-                    Lots of technical stuff learnt, connections made, evidences shown.
+                    Technical knowledge acquired, quality networking with proven results achieved.
                 </h3>
             </div>
             <Image
