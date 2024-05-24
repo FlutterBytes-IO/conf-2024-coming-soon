@@ -96,7 +96,7 @@ export default function GallerySection() {
 				alt="gallery-img-6"
 				width={250}
 				height={175.53}
-				className="absolute rounded-[10px] lg:bottom-[104.47px] bottom-[24.72px] -left-5 lg:left-[271px] w-[142.42px] lg:w-auto h-[100px] lg:h-auto"
+				className="absolute rounded-[10px] lg:bottom-[104.47px] bottom-[24.72px] -left-5 lg:left-[120px] xl:left-[271px] w-[142.42px] lg:w-auto h-[100px] lg:h-auto"
 			/>
 			<Image
 				onMouseEnter={() => previewImage(PrevImage7)}
