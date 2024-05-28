@@ -20,7 +20,15 @@ export const metadata: Metadata = {
 		title: "FLUTTERBYTES CONFERENCE 2024 | COMING SOON",
 		description:
 			"Join us at Flutterbytes conference to gain technical knowledge, and network with quality people.",
-		images: ["/OpengraphImage.png"],
+		images: [
+			{
+				url: "/OpengraphImage.png",
+				width: 800,
+				height: 600,
+				alt: "Flutterbytes Conference 2024",
+			},
+		],
+		type: "website",
 	},
 };
 
