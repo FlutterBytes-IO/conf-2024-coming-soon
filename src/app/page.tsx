@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useDarkmode } from "@/Context/DarkMode";
+import { useDarkmode, useCheckScreenSize } from "@/Context/DarkMode";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import GetNotifiedForm from "@/components/GetNotifiedForm";
@@ -27,11 +27,10 @@ import FormModal from "@/components/Modals/FormModal";
 
 export default function Home() {
 	const isDarkmode = useDarkmode();
+	const smlScreen = useCheckScreenSize();
 	const navbarRef = useRef<HTMLDivElement>(null);
 	const [openFormModal, setOpenFormModal] = useState<boolean>(false);
 
-	const smlScreen = window.matchMedia("(max-width: 767px)").matches;
-	console.log(smlScreen);
 	return (
 		<>
 			<ToastContainer />

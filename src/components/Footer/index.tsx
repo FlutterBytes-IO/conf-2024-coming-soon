@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { useDarkmode } from "@/Context/DarkMode";
+import { useDarkmode, useCheckScreenSize } from "@/Context/DarkMode";
 import GetNotifiedForm from "../GetNotifiedForm";
 import FooterLogoDark from "@/assets/images/FooterLogoDark.svg";
 import FooterLogoLight from "@/assets/images/FooterLogoLight.svg";
@@ -12,7 +12,7 @@ import InstagramIcon from "../vectors/InstagramIcon";
 
 export default function Footer() {
 	const isDarkmode = useDarkmode();
-	const smlScreen = window.matchMedia("(max-width: 767px)").matches;
+	const smlScreen = useCheckScreenSize();
 	return (
 		<div
 			className={`pt-[99px]  transition-all duration-500 pb-[35px] md:pb-[80px] px-5 md:px-[101px] ${

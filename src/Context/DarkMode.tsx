@@ -44,3 +44,14 @@ export function useDarkmode() {
 
 	return isDarkmode;
 }
+
+export function useCheckScreenSize() {
+	const [smallScreen, setSmallScreen] = useState(false);
+
+	useEffect(() => {
+		const smlScreen = window.matchMedia("(max-width: 767px)").matches;
+		setSmallScreen(smlScreen);
+	}, []);
+
+	return smallScreen;
+}
