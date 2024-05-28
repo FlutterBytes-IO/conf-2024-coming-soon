@@ -64,7 +64,7 @@ export default function GallerySection() {
 				className="absolute rounded-[5.84px] lg:rounded-[10px] -top-[7.42px] lg:-top-2.5 -right-[16.42px] lg:-right-[9px] w-[142.42px] lg:w-auto h-[100px] lg:h-auto"
 			/>
 			<div className="text-center w-[326px] md:w-[545px]">
-				<h3 className="font-semibold text-[28px] leading-[32.17px] lg:text-[42px] lg:leading-[48.26px] text-white">
+				<h3 className="font-semibold text-[28px] leading-[32.17px] lg:text-4xl lg:leading-[48.26px] text-white">
 					Technical knowledge acquired, quality networking with proven results
 					achieved.
 				</h3>

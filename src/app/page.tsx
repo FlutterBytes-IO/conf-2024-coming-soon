@@ -44,7 +44,9 @@ export default function Home() {
 					}`}
 				>
 					<div
-						className={`flex flex-col items-center md:max-w-[600px] mt-[112px]`}
+						className={`flex flex-col items-center md:max-w-[600px] ${
+							smlScreen ? "mt-[100.21px]" : "mt-[191px]"
+						}`}
 					>
 						<div className="text-center md:mb-[68px] mb-[140px]">
 							<h2 className="text-5xl leading-[3rem] md:text-[56px] md:leading-[67.2px] mb-3 font-semibold header-gradient md:mt-auto">
