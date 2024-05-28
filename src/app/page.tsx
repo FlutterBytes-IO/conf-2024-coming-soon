@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useContext, useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { DarkmodeContext } from "@/Context/DarkMode";
+import { useDarkmode } from "@/Context/DarkMode";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import GetNotifiedForm from "@/components/GetNotifiedForm";
@@ -26,21 +26,12 @@ import Anticipate, { AnticipateMobile } from "@/components/vectors/Anticipate";
 import FormModal from "@/components/Modals/FormModal";
 
 export default function Home() {
-	const { isDarkmode } = useContext(DarkmodeContext);
+	const isDarkmode = useDarkmode();
 	const navbarRef = useRef<HTMLDivElement>(null);
-	const [navHeight, setNavHeight] = useState<number>(0);
-	const [deviceWidth, setDeviceWidth] = useState<number>(null!);
 	const [openFormModal, setOpenFormModal] = useState<boolean>(false);
 
-	useEffect(() => {
-		if (navbarRef.current) {
-			const navbarHeight = navbarRef.current.getBoundingClientRect().height;
-			setNavHeight(navbarHeight);
-		}
-
-		setDeviceWidth(window.screen.width);
-	}, []);
-
+	const smlScreen = window.matchMedia("(max-width: 767px)").matches;
+	console.log(smlScreen);
 	return (
 		<>
 			<ToastContainer />
@@ -112,8 +103,8 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					{deviceWidth < 768 ? <ComingSoonMobile /> : <ComingSoon />}
-					{deviceWidth < 768 ? <AnticipateMobile /> : <Anticipate />}
+					{smlScreen ? <ComingSoonMobile /> : <ComingSoon />}
+					{smlScreen ? <AnticipateMobile /> : <Anticipate />}
 				</section>
 				<section
 					className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${

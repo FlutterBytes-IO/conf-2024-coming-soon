@@ -1,34 +1,46 @@
-"use client"
+"use client";
 
-import { browser } from "process";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 interface DarkmodeContextType {
-    isDarkmode: boolean;
-    setIsDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
+	isDarkmode: boolean;
+	setIsDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const DarkmodeContext = createContext<DarkmodeContextType>({
-    isDarkmode: false,
-    setIsDarkmode: () => {}
+	isDarkmode: false,
+	setIsDarkmode: () => {},
 });
 
-export default function DarkmodeProvider({ children }: { children: React.ReactNode }) {
-    const [isDarkmode, setIsDarkmode] = useState(false);
+export default function DarkmodeProvider({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
+	const [isDarkmode, setIsDarkmode] = useState(false);
 
-    useEffect(() => {
-        const browserMode = window.matchMedia('(prefers-color-scheme: dark)');
+	useEffect(() => {
+		const browserMode = window.matchMedia("(prefers-color-scheme: dark)");
 
-        const handleModeChange = (e: MediaQueryListEvent) => setIsDarkmode(e.matches)
+		const handleModeChange = (e: MediaQueryListEvent) =>
+			setIsDarkmode(e.matches);
 
-        setIsDarkmode(browserMode.matches);
+		setIsDarkmode(browserMode.matches);
 
-        browserMode.addEventListener("change", handleModeChange)
-        
-        return () => browserMode.removeEventListener("change", handleModeChange)
-    }, [])
+		browserMode.addEventListener("change", handleModeChange);
 
-    return (
-        <DarkmodeContext.Provider value={{isDarkmode, setIsDarkmode}}>{children}</DarkmodeContext.Provider>
-    )
+		return () => browserMode.removeEventListener("change", handleModeChange);
+	}, []);
+
+	return (
+		<DarkmodeContext.Provider value={{ isDarkmode, setIsDarkmode }}>
+			{children}
+		</DarkmodeContext.Provider>
+	);
+}
+
+export function useDarkmode() {
+	const { isDarkmode } = useContext(DarkmodeContext);
+
+	return isDarkmode;
 }

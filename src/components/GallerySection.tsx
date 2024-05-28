@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 import GalImage1 from "@/assets/images/GalImage1.png";
@@ -26,11 +26,6 @@ export default function GallerySection() {
 		width: 0,
 	});
 	const [openModal, setOpenModal] = useState<boolean>(false);
-	const [deviceWidth, setDeviceWidth] = useState<number>(0);
-
-	useEffect(() => {
-		setDeviceWidth(window.innerWidth);
-	}, []);
 
 	function previewImage(image: ImageProps) {
 		setCurrentImgPrev(image);
