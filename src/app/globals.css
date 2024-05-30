@@ -57,30 +57,30 @@
 }
 
 .hero-gradient-dark {
-	background-image: url("../assets/images/hero2bg.png"),
+	background-image: url("/images/hero2bg.png"),
 		linear-gradient(to right, #021429 4%, #052447 50%, #021429 92%);
 }
 
 .hero-gradient-light {
-	background-image: url("../assets/images/hero2bg.png"),
+	background-image: url("/images/hero2bg.png"),
 		linear-gradient(90deg, #ffffff 0%, #d0efff 100%);
 }
 
 .hero-gradient-light-mobile {
-	background-image: url("../assets/images/hero2bg.png"),
+	background-image: url("/images/hero2bg.png"),
 		linear-gradient(to bottom, #ffffff 0%, #d0efff 100%);
 }
 
 .section4-bg {
-	background-image: url("../assets/images/section4bg.png");
+	background-image: url("/images/section4bg.png");
 }
 
 .section5-bg {
-	background-image: url("../assets/images/section5bg.png");
+	background-image: url("/images/section5bg.png");
 }
 
 .gallery-sec-bg {
-	background-image: url("../assets/images/GallerySecBg.png");
+	background-image: url("/images/GallerySecBg.png");
 	background-color: #2a9df4;
 }
 
@@ -95,7 +95,7 @@
 
 .middlecard {
 	background-color: #1167b1;
-	background-image: url("../assets/images/middlecard.png");
+	background-image: url("/images/middlecard.png");
 }
 
 @keyframes movePath {
