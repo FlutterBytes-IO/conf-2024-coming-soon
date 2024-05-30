@@ -3,20 +3,20 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import GalImage1 from "@/assets/images/GalImage1.png";
-import GalImage2 from "@/assets/images/GalImage2.png";
-import GalImage3 from "@/assets/images/GalImage3.png";
-import GalImage4 from "@/assets/images/GalImage4.png";
-import GalImage5 from "@/assets/images/GalImage5.png";
-import GalImage6 from "@/assets/images/GalImage6.png";
-import GalImage7 from "@/assets/images/GalImage7.png";
-import PrevImage1 from "@/assets/images/PrevImage1.png";
-import PrevImage2 from "@/assets/images/PrevImage2.png";
-import PrevImage3 from "@/assets/images/PrevImage3.png";
-import PrevImage4 from "@/assets/images/PrevImage4.png";
-import PrevImage5 from "@/assets/images/PrevImage5.png";
-import PrevImage6 from "@/assets/images/PrevImage6.png";
-import PrevImage7 from "@/assets/images/PrevImage7.png";
+import GalImage1 from "@/images/GalImage1.png";
+import GalImage2 from "@/images/GalImage2.png";
+import GalImage3 from "@/images/GalImage3.png";
+import GalImage4 from "@/images/GalImage4.png";
+import GalImage5 from "@/images/GalImage5.png";
+import GalImage6 from "@/images/GalImage6.png";
+import GalImage7 from "@/images/GalImage7.png";
+import PrevImage1 from "@/images/PrevImage1.png";
+import PrevImage2 from "@/images/PrevImage2.png";
+import PrevImage3 from "@/images/PrevImage3.png";
+import PrevImage4 from "@/images/PrevImage4.png";
+import PrevImage5 from "@/images/PrevImage5.png";
+import PrevImage6 from "@/images/PrevImage6.png";
+import PrevImage7 from "@/images/PrevImage7.png";
 import ImageModal, { ImageProps } from "./Modals/ImageModal";
 
 export default function GallerySection() {

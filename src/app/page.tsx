@@ -17,10 +17,10 @@ import TwitterIcon from "@/components/vectors/TwitterIcon";
 import MessageIcon from "@/components/vectors/MessageIcon";
 import LinkedInIcon from "@/components/vectors/LinkedInIcon";
 import InstagramIcon from "@/components/vectors/InstagramIcon";
-import Conference from "@/assets/images/Conference.png";
-import Hero2 from "@/assets/images/Hero2.png";
-import ImageIcon from "@/assets/icons/Image.svg";
-import Youtube from "@/assets/icons/Youtube.svg";
+import Conference from "@/images/Conference.png";
+import Hero2 from "@/images/Hero2.png";
+import ImageIcon from "@/icons/Image.svg";
+import Youtube from "@/icons/Youtube.svg";
 import ComingSoon, { ComingSoonMobile } from "@/components/vectors/ComingSoon";
 import Anticipate, { AnticipateMobile } from "@/components/vectors/Anticipate";
 import FormModal from "@/components/Modals/FormModal";
@@ -115,11 +115,11 @@ export default function Home() {
 					<div className="flex flex-col items-center md:max-w-[694.62px]">
 						<Image
 							src={Hero2}
-							alt=""
+							alt="hero-2"
 							className="object-contain md:rounded-[20px] mb-10 mt-9 md:mt-0 md:mb-16"
 						/>
 						<div className="text-center">
-							<h3 className="text-[28px] leading-[32.17px] md:text-[40px] md:leading-[45.96px] mb-8 font-semibold header-gradient">
+							<h3 className="text-[28px] px-5 leading-[32.17px] md:text-[40px] md:leading-[45.96px] mb-8 font-semibold header-gradient">
 								No doubts, FlutterBytes Conference 2023 was amazing!
 							</h3>
 							<div className="flex flex-col gap-y-4 justify-center">

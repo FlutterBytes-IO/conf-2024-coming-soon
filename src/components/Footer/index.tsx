@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { useDarkmode, useCheckScreenSize } from "@/Context/DarkMode";
 import GetNotifiedForm from "../GetNotifiedForm";
-import FooterLogoDark from "@/assets/images/FooterLogoDark.svg";
-import FooterLogoLight from "@/assets/images/FooterLogoLight.svg";
+import FooterLogoDark from "@/images/FooterLogoDark.svg";
+import FooterLogoLight from "@/images/FooterLogoLight.svg";
 import IconContainer from "../IconContainer";
 import TwitterIcon from "../vectors/TwitterIcon";
 import LinkedInIcon from "../vectors/LinkedInIcon";
