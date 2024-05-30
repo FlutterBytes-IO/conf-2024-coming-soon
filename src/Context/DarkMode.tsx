@@ -47,11 +47,16 @@ export function useDarkmode() {
 
 export function useCheckScreenSize() {
 	const [smallScreen, setSmallScreen] = useState(false);
+	const [xsmallScreen, setXsmallScreen] = useState(false);
 
 	useEffect(() => {
 		const smlScreen = window.matchMedia("(max-width: 767px)").matches;
 		setSmallScreen(smlScreen);
 	}, []);
+	useEffect(() => {
+		const smlScreen = window.matchMedia("(max-width: 375px)").matches;
+		setXsmallScreen(smlScreen);
+	}, []);
 
-	return smallScreen;
+	return {smallScreen, xsmallScreen};
 }

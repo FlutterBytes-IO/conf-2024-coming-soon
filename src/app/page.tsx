@@ -21,13 +21,19 @@ import Conference from "@/images/Conference.png";
 import Hero2 from "@/images/Hero2.png";
 import ImageIcon from "@/icons/Image.svg";
 import Youtube from "@/icons/Youtube.svg";
-import ComingSoon, { ComingSoonMobile } from "@/components/vectors/ComingSoon";
-import Anticipate, { AnticipateMobile } from "@/components/vectors/Anticipate";
+import ComingSoon, {
+	ComingSoonMobile,
+	ComingSoonMobileXs,
+} from "@/components/vectors/ComingSoon";
+import Anticipate, {
+	AnticipateMobile,
+	AnticipateMobileXs,
+} from "@/components/vectors/Anticipate";
 import FormModal from "@/components/Modals/FormModal";
 
 export default function Home() {
 	const isDarkmode = useDarkmode();
-	const smlScreen = useCheckScreenSize();
+	const { smallScreen, xsmallScreen } = useCheckScreenSize();
 	const navbarRef = useRef<HTMLDivElement>(null);
 	const [openFormModal, setOpenFormModal] = useState<boolean>(false);
 
@@ -44,7 +50,7 @@ export default function Home() {
 				>
 					<div
 						className={`flex flex-col items-center md:max-w-[600px] ${
-							smlScreen ? "mt-[100.21px]" : "mt-[191px]"
+							smallScreen ? "mt-[100.21px]" : "mt-[191px]"
 						}`}
 					>
 						<div className="text-center md:mb-[68px] mb-[140px]">
@@ -104,8 +110,20 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					{smlScreen ? <ComingSoonMobile /> : <ComingSoon />}
-					{smlScreen ? <AnticipateMobile /> : <Anticipate />}
+					{xsmallScreen ? (
+						<ComingSoonMobileXs />
+					) : smallScreen ? (
+						<ComingSoonMobile />
+					) : (
+						<ComingSoon />
+					)}
+					{xsmallScreen ? (
+						<AnticipateMobileXs />
+					) : smallScreen ? (
+						<AnticipateMobile />
+					) : (
+						<Anticipate />
+					)}
 				</section>
 				<section
 					className={`py-[127px] transition-all duration-500 flex flex-col md:justify-center md:items-center ${

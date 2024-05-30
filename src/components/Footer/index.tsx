@@ -12,7 +12,7 @@ import InstagramIcon from "../vectors/InstagramIcon";
 
 export default function Footer() {
 	const isDarkmode = useDarkmode();
-	const smlScreen = useCheckScreenSize();
+	const { smallScreen } = useCheckScreenSize();
 	return (
 		<div
 			className={`pt-[99px]  transition-all duration-500 pb-[35px] md:pb-[80px] px-5 md:px-[101px] ${
@@ -30,22 +30,22 @@ export default function Footer() {
 						<IconContainer
 							otherstyles="!py-4 px-[9.6px]"
 							href="https://x.com/flutterbyteconf"
-							icon={<TwitterIcon small={smlScreen ? true : false} />}
+							icon={<TwitterIcon small={smallScreen ? true : false} />}
 						/>
 						<IconContainer
 							otherstyles="!py-4 px-[9.6px]"
 							href="https://www.linkedin.com/company/flutterbytes/"
-							icon={<LinkedInIcon small={smlScreen ? true : false} />}
+							icon={<LinkedInIcon small={smallScreen ? true : false} />}
 						/>
 						<IconContainer
 							otherstyles="!py-4 px-[9.6px]"
 							href="mailto:contact.flutterbytes@gmail.com"
-							icon={<MessageIcon small={smlScreen ? true : false} />}
+							icon={<MessageIcon small={smallScreen ? true : false} />}
 						/>
 						<IconContainer
 							otherstyles="!py-4 px-[9.6px]"
 							href="https://www.instagram.com/flutterbytes_c"
-							icon={<InstagramIcon small={smlScreen ? true : false} />}
+							icon={<InstagramIcon small={smallScreen ? true : false} />}
 						/>
 					</div>
 				</div>
